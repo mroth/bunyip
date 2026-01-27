@@ -1,0 +1,18 @@
+{
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | { read file_path; bunx oxlint --fix \"$file_path\"; bunx oxfmt --no-error-on-unmatched-pattern \"$file_path\"; }"
+          }
+        ]
+      }
+    ]
+  }
+}

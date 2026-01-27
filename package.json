@@ -1,0 +1,19 @@
+{
+  "name": "bunyip",
+  "private": true,
+  "type": "module",
+  "module": "src/index.ts",
+  "scripts": {
+    "start": "bun src/index.ts",
+    "lint": "oxlint --type-aware --type-check",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
+  },
+  "devDependencies": {
+    "@types/bun": "^1",
+    "oxfmt": "^0",
+    "oxlint": "^1",
+    "oxlint-tsgolint": "^7",
+    "typescript": "^7"
+  }
+}
